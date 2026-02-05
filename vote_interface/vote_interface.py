@@ -144,7 +144,7 @@ class VotePage(tk.Frame):
         bg_label.place(x=0, y=0, relwidth=1, relheight=1)
 
         buttons_list = [None] * 6
-        cols_relx = [0.166, 0.5, 0.833]  # 1/6, 1/2, 5/6 pour centrer dans 3 colonnes
+        cols_relx = [0.166, 0.5, 0.833]
         rows_rely = [0.25, 0.65]
 
         for i in range(6):
@@ -179,7 +179,7 @@ class ResultPage(tk.Frame):
         button_StartPage.grid()
 
         self.labels_list = [None] * 6
-        cols_relx = [0.166, 0.5, 0.833]  # 1/6, 1/2, 5/6 pour centrer dans 3 colonnes
+        cols_relx = [0.166, 0.5, 0.833]
         rows_rely = [0.25, 0.65]
 
         for i in range(6):
@@ -220,20 +220,19 @@ class WinnerPage(tk.Frame):
         if n == 0:
             return
 
-        # Police dynamique en fonction du nombre de mots
-        font_size = 40 if n <= 3 else 30
+        font_size = 20
 
-        # Crée un label pour chaque mot
+        i = 0
         for winner in search_winner():
             label = tk.Label(
                 self,
                 text=winner,
-                font=("Helvetica", font_size, "bold"),
-                bg="white",
-                fg="black",
+                font=("arial", font_size, "bold"),
+                fg="white",
+                bg="#111827",
             )
-            # place verticalement, centré horizontalement
-            label.place(relx=0.5, y=200, anchor="center")
+            label.place(relx=0.5, y=100 + 50 * i, anchor="center")
+            i += 1
 
 
 # Driver Code
