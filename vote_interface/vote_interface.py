@@ -12,6 +12,12 @@ def add_vote(i):
     print(res_votes)
 
 
+def reset():
+    global res_votes
+    res_votes = [0, 0, 0, 0, 0, 0]
+    print(res_votes)
+
+
 class tkinterApp(tk.Tk):
     # __init__ function for class tkinterApp
     def __init__(self, *args, **kwargs):
@@ -103,15 +109,7 @@ class StartPage(tk.Frame):
         # putting the button in its place by
         button_winner.place(relx=0.5, y=300, anchor="center")
 
-        button_reset = ttk.Button(
-            self,
-            text="Reset",
-            command=lambda: [
-                controller.frames[VotePage].delete(),
-                controller.frames[ResultPage].delete(),
-                controller.frames[WinnerPage].delete(),
-            ],
-        )
+        button_reset = ttk.Button(self, text="Reset", command=reset)
 
         # putting the button in its place by
         button_reset.place(relx=0.5, y=400, anchor="center")
