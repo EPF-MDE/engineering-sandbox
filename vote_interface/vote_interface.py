@@ -2,8 +2,11 @@ import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
 from pathlib import Path
+<<<<<<< vote-interface
+=======
 
 LARGEFONT = ("Verdana", 35)
+>>>>>>> main
 
 
 class tkinterApp(tk.Tk):
@@ -29,6 +32,22 @@ class tkinterApp(tk.Tk):
         container.grid_rowconfigure(0, weight=1)
         container.grid_columnconfigure(0, weight=1)
 
+<<<<<<< vote-interface
+def main():
+    root = tk.Tk()
+    root.title("Vote for your favorite food")
+    root.geometry("650x1155")
+
+    BASE_DIR = Path(__file__).resolve().parent
+    IMG_PATH = BASE_DIR /"background.jpg"
+
+    img = Image.open(IMG_PATH)
+    bg_img = ImageTk.PhotoImage(img)
+ 
+    bg_label = tk.Label(root, image=bg_img)
+    bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+    bg_label.lower()
+=======
         # initializing frames to an empty array
         self.frames = {}
 
@@ -41,6 +60,7 @@ class tkinterApp(tk.Tk):
             # startpage, page1, page2 respectively with
             # for loop
             self.frames[F] = frame
+>>>>>>> main
 
             frame.grid(row=0, column=0, sticky="nsew")
 
