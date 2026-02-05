@@ -22,11 +22,6 @@ def add_vote(i):
     print(search_winner())
 
 
-def refresh_votes():
-    for i, labels_list in enumerate(self.labels):
-        labels_list.config(text=f"{list_dishes[i]}: {res_votes[i]} votes")
-
-
 def reset():
     global res_votes
     res_votes = [0, 0, 0, 0, 0, 0]
