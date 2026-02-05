@@ -6,10 +6,20 @@ list_dishes = ["Pizza", "Burger", "Nuggets", "Noodles", "Salad", "Sandwich"]
 res_votes = [0, 0, 0, 0, 0, 0]
 
 
+def search_winner():
+    global res_votes
+    win = []
+    for i in range(len(res_votes)):
+        if res_votes[i] == max(res_votes):
+            win.append(list_dishes[i])
+    return win
+
+
 def add_vote(i):
     global res_votes
     res_votes[i] += 1
     print(res_votes)
+    print(search_winner())
 
 def refresh_votes():
     for i, labels_list in enumerate(self.labels):
@@ -200,6 +210,28 @@ class WinnerPage(tk.Frame):
             self, text="Menu", command=lambda: controller.show_frame(StartPage)
         )
         button_StartPage.grid()
+
+    def create_labels(self):
+        if res_votes == [0, 0, 0, 0, 0, 0]:
+            return
+        n = len(search_winner(res_votes))
+        if n == 0:
+            return
+
+        # Police dynamique en fonction du nombre de mots
+        font_size = 40 if n <= 3 else 30
+
+        # Crée un label pour chaque mot
+        for i, word in enumerate(self.word_list):
+            label = tk.Label(
+                self,
+                text=word,
+                font=("Helvetica", font_size, "bold"),
+                bg="white",
+                fg="black",
+            )
+            # place verticalement, centré horizontalement
+            label.pack(pady=10, anchor="center")
 
 
 # Driver Code
