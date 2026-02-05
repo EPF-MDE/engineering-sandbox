@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
-from pathlib import Path
 
 list_dishes = ["Pizza", "Burger", "Nuggets", "Noodles", "Salad", "Sandwich"]
 res_votes = [0, 0, 0, 0, 0, 0]
@@ -143,6 +142,12 @@ class VotePage(tk.Frame):
             buttons_list[i].place(
                 relx=cols_relx[col], rely=rows_rely[row], anchor="center"
             )
+            button_StartPage = ttk.Button(
+                self, text="Menu", command=lambda: controller.show_frame(StartPage)
+            )
+
+        # putting the button in its place by
+        button_StartPage.grid()
 
 
 class ResultPage(tk.Frame):
