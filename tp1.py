@@ -10,7 +10,7 @@ def est_dans_le_frigo(ingredients_recette, mon_frigo):
 
     # On considère que ça matche si au moins 70% des ingrédients du frigo sont dedans
     # Ou vous pouvez changer pour exiger 100% (len(trouves) == len(mon_frigo))
-    return len(trouves) >= len(mon_frigo) * 0.5
+    return len(trouves) >= len(mon_frigo) * 0.75
 
 
 def master_chef_marmiton(ingredients_frigo):
