@@ -34,7 +34,7 @@ class tkinterApp(tk.Tk):
 
         # iterating through a tuple consisting
         # of the different page layouts
-        for F in (StartPage, Page1):
+        for F in (StartPage, VotePage, ResultPage, WinnerPage):
             frame = F(container, self)
 
             # initializing frame of that object from
@@ -80,6 +80,7 @@ class StartPage(tk.Frame):
             self, text="Result", command=lambda: controller.show_frame(ResultPage)
         )
         
+        
         # putting the button in its place by
         button_result.place(relx=0.5, y=450, anchor="center")
 
@@ -93,17 +94,65 @@ class StartPage(tk.Frame):
         button_reset = ttk.Button(
             self, text="Reset"
         )
-        
+
         # putting the button in its place by
         button_reset.place(relx=0.5, y=950, anchor="center")
 
 
 
+
 # second window frame page1
-class Page1(tk.Frame):
+class VotePage(tk.Frame):
     def __init__(self, parent, controller):
 
         tk.Frame.__init__(self, parent)
+        img = Image.open("background.jpg")
+        self.bg_img = ImageTk.PhotoImage(img)
+
+        bg_label = tk.Label(self, image=self.bg_img)
+        bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+
+        # button to show frame 2 with text
+        # layout2
+        button1 = ttk.Button(
+            self, text="StartPage", command=lambda: controller.show_frame(StartPage)
+        )
+
+        # putting the button in its place
+        # by using grid
+        button1.grid(row=1, column=1, padx=10, pady=10)
+
+
+class ResultPage(tk.Frame):
+    def __init__(self, parent, controller):
+
+        tk.Frame.__init__(self, parent)
+        img = Image.open("background.jpg")
+        self.bg_img = ImageTk.PhotoImage(img)
+
+        bg_label = tk.Label(self, image=self.bg_img)
+        bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+
+        # button to show frame 2 with text
+        # layout2
+        button1 = ttk.Button(
+            self, text="StartPage", command=lambda: controller.show_frame(StartPage)
+        )
+
+        # putting the button in its place
+        # by using grid
+        button1.grid(row=1, column=1, padx=10, pady=10)
+
+
+class WinnerPage(tk.Frame):
+    def __init__(self, parent, controller):
+
+        tk.Frame.__init__(self, parent)
+        img = Image.open("background.jpg")
+        self.bg_img = ImageTk.PhotoImage(img)
+
+        bg_label = tk.Label(self, image=self.bg_img)
+        bg_label.place(x=0, y=0, relwidth=1, relheight=1)
 
         # button to show frame 2 with text
         # layout2
