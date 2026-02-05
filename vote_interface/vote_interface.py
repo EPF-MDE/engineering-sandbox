@@ -11,6 +11,9 @@ def add_vote(i):
     res_votes[i] += 1
     print(res_votes)
 
+def refresh_votes():
+    for i, labels_list in enumerate(self.labels):
+            labels_list.config(text=f"{list_dishes[i]}: {res_votes[i]} votes")
 
 def reset():
     global res_votes
@@ -62,6 +65,11 @@ class tkinterApp(tk.Tk):
     # parameter
     def show_frame(self, cont):
         frame = self.frames[cont]
+        if cont is ResultPage:
+            for i in range(6):
+                frame.labels_list[i].config(
+                    text=f"{list_dishes[i]}: {res_votes[i]} votes"
+                )
         frame.tkraise()
 
 
@@ -149,8 +157,9 @@ class VotePage(tk.Frame):
 
 
 class ResultPage(tk.Frame):
-    def __init__(self, parent, controller):
+    
 
+    def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         img = Image.open("background.jpg")
         self.bg_img = ImageTk.PhotoImage(img)
@@ -161,6 +170,20 @@ class ResultPage(tk.Frame):
             self, text="Menu", command=lambda: controller.show_frame(StartPage)
         )
         button_StartPage.grid()
+
+        self.labels_list = [None] * 6
+        cols_relx = [0.166, 0.5, 0.833]  # 1/6, 1/2, 5/6 pour centrer dans 3 colonnes
+        rows_rely = [0.25, 0.65]
+
+        for i in range(6):
+            row = i // 3
+            col = i % 3
+            self.labels_list[i] = tk.Label( self, text=f"{list_dishes[i]}: {res_votes[i]} votes", font=("Arial", 12), fg="white", bg="#111827", ) 
+            self.labels_list[i].place(relx=cols_relx[col], rely=rows_rely[row], anchor="center")
+            
+        
+
+        
 
 
 class WinnerPage(tk.Frame):
