@@ -8,7 +8,7 @@ def est_dans_le_frigo(ingredients_recette, mon_frigo):
     # On compte combien d'ingrédients du frigo sont trouvés
     trouves = [ing for ing in mon_frigo if ing.lower() in recette_str]
 
-    # On considère que ça matche si au moins 70% des ingrédients du frigo sont dedans
+    # On considère que ça matche si au moins 75% des ingrédients du frigo sont dedans
     # Ou vous pouvez changer pour exiger 100% (len(trouves) == len(mon_frigo))
     return len(trouves) >= len(mon_frigo) * 0.75
 
