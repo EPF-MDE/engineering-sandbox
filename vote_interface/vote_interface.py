@@ -83,6 +83,11 @@ class Page1(tk.Frame):
     def __init__(self, parent, controller):
 
         tk.Frame.__init__(self, parent)
+        img = Image.open("background.jpg")
+        self.bg_img = ImageTk.PhotoImage(img)
+
+        bg_label = tk.Label(self, image=self.bg_img)
+        bg_label.place(x=0, y=0, relwidth=1, relheight=1)
 
         # button to show frame 2 with text
         # layout2
