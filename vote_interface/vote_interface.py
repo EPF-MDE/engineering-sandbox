@@ -188,6 +188,28 @@ class WinnerPage(tk.Frame):
         )
         button_StartPage.grid()
 
+    def create_labels(self):
+        if res_votes == [0, 0, 0, 0, 0, 0]:
+            return
+        n = len(search_winner(res_votes))
+        if n == 0:
+            return
+
+        # Police dynamique en fonction du nombre de mots
+        font_size = 40 if n <= 3 else 30
+
+        # Crée un label pour chaque mot
+        for i, word in enumerate(self.word_list):
+            label = tk.Label(
+                self,
+                text=word,
+                font=("Helvetica", font_size, "bold"),
+                bg="white",
+                fg="black",
+            )
+            # place verticalement, centré horizontalement
+            label.pack(pady=10, anchor="center")
+
 
 # Driver Code
 app = tkinterApp()
