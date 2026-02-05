@@ -42,6 +42,7 @@ def master_chef_marmiton(ingredients_frigo):
         urls_a_tester = []
         for l in liens_bruts[:3]:
             u = l.get_attribute("href")
+            # if u != None and u not in urls_a_tester:
             if u and u not in urls_a_tester:
                 if not u.startswith("http"):
                     u = "https://www.marmiton.org" + u
