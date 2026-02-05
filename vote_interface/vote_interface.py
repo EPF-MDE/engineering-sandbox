@@ -22,7 +22,7 @@ def main():
     header.pack(fill="x")
 
     if interface == 0:
-        vote_button = ttk.Button(root, text="vote,", command=vote_button_click)
+        vote_button = ttk.Button(root, text="Vote", command=vote_button_click)
         vote_button.pack(ipadx=5, ipady=5, expand=True)
 
     root.mainloop()
