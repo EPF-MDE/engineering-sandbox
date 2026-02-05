@@ -6,10 +6,20 @@ list_dishes = ["Pizza", "Burger", "Nuggets", "Noodles", "Salad", "Sandwich"]
 res_votes = [0, 0, 0, 0, 0, 0]
 
 
+def search_winner():
+    global res_votes
+    win = []
+    for i in range(len(res_votes)):
+        if res_votes[i] == max(res_votes):
+            win.append(list_dishes[i])
+    return win
+
+
 def add_vote(i):
     global res_votes
     res_votes[i] += 1
     print(res_votes)
+    print(search_winner())
 
 
 def reset():
