@@ -60,7 +60,6 @@ def main():
             # startpage, page1, page2 respectively with
             # for loop
             self.frames[F] = frame
->>>>>>> main
 
             frame.grid(row=0, column=0, sticky="nsew")
 
@@ -82,9 +81,16 @@ class StartPage(tk.Frame):
         bg_label = tk.Label(self, image=self.bg_img)
         bg_label.place(x=0, y=0, relwidth=1, relheight=1)
         # label of frame Layout 2
-        title_label = tk.Label(self, text="Vote for your favorite food",
-                       font=("Arial", 24, ),
-                       fg="white", bg="#111827")
+        title_label = tk.Label(
+            self,
+            text="Vote for your favorite food",
+            font=(
+                "Arial",
+                24,
+            ),
+            fg="white",
+            bg="#111827",
+        )
 
         # putting the grid in its place by using
         title_label.place(relx=0.5, y=40, anchor="center")
