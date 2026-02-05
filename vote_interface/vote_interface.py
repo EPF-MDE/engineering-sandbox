@@ -6,6 +6,7 @@ list_dishes = ["Pizza", "Burger", "Nuggets", "Noodles", "Salad", "Sandwich"]
 res_votes = [0, 0, 0, 0, 0, 0]
 
 
+# Search the winner in res_vote, return the alist of dish(es) with the higher score
 def search_winner():
     global res_votes
     win = []
@@ -15,6 +16,7 @@ def search_winner():
     return win
 
 
+# Increment the number of vote for a dish depending of n the index
 def add_vote(i):
     global res_votes
     res_votes[i] += 1
@@ -22,6 +24,7 @@ def add_vote(i):
     print(search_winner())
 
 
+# reset the votes
 def reset():
     global res_votes
     res_votes = [0, 0, 0, 0, 0, 0]
@@ -72,11 +75,13 @@ class tkinterApp(tk.Tk):
     # parameter
     def show_frame(self, cont):
         frame = self.frames[cont]
+        # refresh when resultPage is load to get the number of votes
         if cont is ResultPage:
             for i in range(6):
                 frame.labels_list[i].config(
                     text=f"{list_dishes[i]}: {res_votes[i]} votes"
                 )
+        # refresh when winnerPage is load to get the winner(s)
         if cont == WinnerPage:
             frame.create_labels()
         frame.tkraise()
@@ -102,37 +107,33 @@ class StartPage(tk.Frame):
             bg="#111827",
         )
 
-        # putting the grid in its place by using
+        # putting the grid in its place by using .place
         title_label.place(relx=0.5, y=40, anchor="center")
 
         button_vote = ttk.Button(
             self, text="Vote", command=lambda: controller.show_frame(VotePage)
         )
 
-        # putting the button in its place by
         button_vote.place(relx=0.5, y=100, anchor="center")
 
         button_result = ttk.Button(
             self, text="Result", command=lambda: controller.show_frame(ResultPage)
         )
 
-        # putting the button in its place by
         button_result.place(relx=0.5, y=200, anchor="center")
 
         button_winner = ttk.Button(
             self, text="Winner", command=lambda: controller.show_frame(WinnerPage)
         )
 
-        # putting the button in its place by
         button_winner.place(relx=0.5, y=300, anchor="center")
 
         button_reset = ttk.Button(self, text="Reset", command=reset)
 
-        # putting the button in its place by
         button_reset.place(relx=0.5, y=400, anchor="center")
 
 
-# second window frame page1
+# second window frame (votePage)
 class VotePage(tk.Frame):
     def __init__(self, parent, controller):
 
@@ -147,6 +148,7 @@ class VotePage(tk.Frame):
         cols_relx = [0.166, 0.5, 0.833]
         rows_rely = [0.25, 0.65]
 
+        # Show button to vote for dishes
         for i in range(6):
             row = i // 3
             col = i % 3
@@ -182,6 +184,7 @@ class ResultPage(tk.Frame):
         cols_relx = [0.166, 0.5, 0.833]
         rows_rely = [0.25, 0.65]
 
+        # Show labels with votes results
         for i in range(6):
             row = i // 3
             col = i % 3
@@ -223,6 +226,7 @@ class WinnerPage(tk.Frame):
         font_size = 20
 
         i = 0
+        # Show the list of winners
         for winner in search_winner():
             label = tk.Label(
                 self,
