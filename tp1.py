@@ -21,9 +21,7 @@ def master_chef_marmiton(ingredients_frigo):
 
     with sync_playwright() as p:
         print("👨‍🍳 Démarrage du robot cuisinier...")
-        browser = p.chromium.launch(
-            headless=False
-        )  # Mettre True pour cacher la fenêtre
+        browser = p.chromium.launch(headless=True)  # Mettre True pour cacher la fenêtre
         context = browser.new_context()
         page = context.new_page()
 
