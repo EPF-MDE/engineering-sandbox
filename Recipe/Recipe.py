@@ -21,9 +21,9 @@ if choice == 1:
         else:
             condition = False
 
-    if condition == False:
+    if not condition:
         print("That recipe does not exist")
 
 if choice == 2:
-    print("zob")
+    print("Not implemented yet, sorry")
 user_ingredient = input("What would you like to cook today ? /n >>  ")
