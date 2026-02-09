@@ -8,6 +8,13 @@ api = openfoodfacts.API(user_agent="MySchoolProject/1.0 (demerdjievm99@mail.com)
 
 def main():
     code = input("Enter the product code: ")
+    product = getProduct(code)
+
+    # type of product is dict
+    print(product)
+
+
+def getProduct(code):
     product = api.product.get(
         code,
         fields=[
@@ -20,8 +27,7 @@ def main():
             "nove-group-serving",
         ],
     )
-    # type of product is dict
-    print(product)
+    return product
 
 
 if __name__ == "__main__":
