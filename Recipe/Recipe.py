@@ -1,3 +1,9 @@
+import pandas as pd
+
+recette_table = pd.read_csv("Recipe//recettes.csv", sep=";")
+print(recette_table)
+
+"""
 choice = int(
     input(
         "Hello, do you need ingredients for a recipe [1] or a recipe for your ingredients [2] ?  \n>>  "
@@ -27,3 +33,4 @@ if choice == 1:
 if choice == 2:
     print("Not implemented yet, sorry")
 user_ingredient = input("What would you like to cook today ? /n >>  ")
+"""
