@@ -1,6 +1,9 @@
 from playwright.sync_api import sync_playwright, Page
+from playwright_debug import print_dom
 from playwright_helper import isElementExisting
 from login import login
+from api_moodle import get_assignments_due_from_moodle_dashboard
+from create_deposit_folders import create_deposit_folders
 
 
 def main():
@@ -18,7 +21,9 @@ def main():
         if isElementExisting(page, "text=Connexion"):
 
             login(page) 
-            input() #Pause
+            assignments = get_assignments_due_from_moodle_dashboard(page)
+            create_deposit_folders(assignments)
+            input()
         else:
             print("Vous êtes déja connectés !")
         # print_dom(page)
