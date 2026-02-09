@@ -10,3 +10,6 @@ def main():
     code = input("Enter the product code: ")
     product = api.product.get(code, fields=["code", "product_name", "nutrition_grades"])
     print(type(product))
+
+
+print("hello j'ai reussi à push sur GitHub")
