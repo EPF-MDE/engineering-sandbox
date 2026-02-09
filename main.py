@@ -12,4 +12,5 @@ def main():
     print(type(product))
 
 
-print("hello j'ai reussi à push sur GitHub")
+if __name__ == "__main__":
+    main()
