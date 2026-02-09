@@ -1,9 +1,7 @@
 import pandas as pd
 
 recette_table = pd.read_csv("Recipe//recettes.csv", sep=";")
-print(recette_table)
 
-"""
 choice = int(
     input(
         "Hello, do you need ingredients for a recipe [1] or a recipe for your ingredients [2] ?  \n>>  "
@@ -13,15 +11,9 @@ choice = int(
 if choice == 1:
     user_recette = input("What dish would you like to cook today ?  \n>>  ")
 
-    liste_recette = [
-        ["Tiramisu", "Mascarpone", "Oeufs"],
-        ["Bolognaise", "Pâtes", "Sauce tomate"],
-        ["Poulet", "Filet de poulet", "Paprika"],
-    ]
-
-    for recette in liste_recette:
-        if user_recette == recette[0]:
-            print(f"Here is the list of ingredient: {recette[1]}")
+    for recette in recette_table["nom_recette"]:
+        if user_recette == recette:
+            print("Here is the list of ingredient:")
             condition = True
             break
         else:
@@ -31,6 +23,5 @@ if choice == 1:
         print("That recipe does not exist")
 
 if choice == 2:
+    # use .countains('ingredient')
     print("Not implemented yet, sorry")
-user_ingredient = input("What would you like to cook today ? /n >>  ")
-"""
