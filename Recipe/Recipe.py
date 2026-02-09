@@ -10,10 +10,11 @@ choice = int(
 
 if choice == 1:
     user_recette = input("What dish would you like to cook today ?  \n>>  ")
+    recette_index = 0
 
-    for recette in recette_table["nom_recette"]:
-        if user_recette == recette:
-            print("Here is the list of ingredient:")
+    for idx, recette in recette_table.iterrows():
+        if user_recette == recette["nom_recette"]:
+            print(f"Here is the list of ingredient: {recette['ingredients']}")
             condition = True
             break
         else:
