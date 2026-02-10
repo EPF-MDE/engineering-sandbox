@@ -47,6 +47,14 @@ BOT_BUBBLE = {
     "border": "1px solid #e0d7f5",
 }
 
+
+WELCOME_MESSAGE = html.Div(
+    "Bonjour 👋 Je suis GenBot, votre assistant IA. Posez-moi n’importe quelle question !",
+    style=BOT_BUBBLE,
+    className="mb-3",
+)
+
+
 # =====================
 # Layout
 # =====================
@@ -66,6 +74,7 @@ app.layout = dbc.Container(
             dbc.Col(
                 html.Div(
                     id="chat-window",
+                    children=[WELCOME_MESSAGE],  # 👈 message affiché dès l’ouverture
                     style=CHAT_CONTAINER_STYLE,
                 )
             )
