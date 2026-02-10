@@ -9,7 +9,7 @@ while not ended:
     print("2. See the list of items")
     print("3. Delete an item")
     print("4. Exit")
-    choice = input("Enter your choice (1, 2, or 3): ")
+    choice = input("Enter your choice (1, 2, 3 or 4): ")
     if choice == "1":
         modifyItems.RegisterNewProduct()
     elif choice == "2":
