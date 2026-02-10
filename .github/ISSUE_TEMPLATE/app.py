@@ -166,8 +166,16 @@ def update_chat(n_clicks, n_submit, user_input, chat_history):
     messages.append({"role": "assistant", "content": bot_reply})
 
     # Message bot
-    chat_history.append(html.Div(bot_reply, style=BOT_BUBBLE, className="mb-3"))
-
+    chat_history.append(
+        html.Div(
+            dcc.Markdown(
+                bot_reply,
+                style={"whiteSpace": "pre-wrap"},
+            ),
+            style=BOT_BUBBLE,
+            className="mb-3",
+        )
+    )
     return chat_history, ""  # vide le champ texte
 
 
