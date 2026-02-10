@@ -4,6 +4,11 @@ import dash_bootstrap_components as dbc
 
 from config import client, MODEL, messages
 
+############################ REQUIREMENTS ###########################
+# pip install dash
+# pip install dash_bootstrap_components
+#####################################################################
+
 # =====================
 # App initialization
 # =====================
@@ -17,15 +22,15 @@ app.title = "GenBot – Génération IA"
 # Styles
 # =====================
 CHAT_CONTAINER_STYLE = {
-    "height": "65vh",
+    "height": "40vh",
     "overflowY": "auto",
-    "padding": "15px",
+    "padding": "10px",
     "backgroundColor": "#f6f2ff",
     "borderRadius": "12px",
 }
 
 USER_BUBBLE = {
-    "backgroundColor": "#6f42c1",
+    "backgroundColor": "#c2abed",
     "color": "white",
     "padding": "10px 14px",
     "borderRadius": "15px",
@@ -51,9 +56,9 @@ app.layout = dbc.Container(
         dbc.Row(
             dbc.Col(
                 html.H2(
-                    "💜 GenBot – Génération IA",
+                    "GenBot by Génération IA",
                     className="text-center my-4",
-                    style={"color": "#5a2d82"},
+                    style={"color": "#d9cee2"},
                 )
             )
         ),
