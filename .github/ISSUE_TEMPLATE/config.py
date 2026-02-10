@@ -83,45 +83,7 @@ Il n’est pas nécessaire d’avoir des connaissances techniques pour participe
 
 Les adhérents et membres de Génération IA sont formés par nos équipes pour pouvoir à leurs tours donner des conférences et participer aux interventions.
 
-Les informations pratiques et les contacts de Génération IA sont les suivants.
 
-Adresse email : contact@generationia-asso.fr
-Réseaux sociaux :
-LinkedIn : Génération IA France
-Instagram : generationia_france
-
-Génération IA intervient partout en Europe et principalement en France.
-
-A titre informatif, les membres du bureau de l'association sont : 
-- Président de Génération IA France : Redouane Oumar NDIAYE
-- Secrétaire Général : Rodrigue HOARAU
-- Secrétaire Général Adjoint : Anis EL JELJAL
-- Vice présidente Génération IA Occitanie : Inès HIJAZI
-- Vice président Génération IA Ile-de-France : Sébastien DORS
-- Secrétaire Génération IA Occitanie : Nesrine AYROUR
 ]
 """
 
-messages = [  # conversation's list for memory
-    {"role": "system", "content": system_prompt},
-    {"role": "system", "content": f"Knowledge base :\n{knowledge_base}"},
-]
-
-
-print("Chatbot is ready ! You can exit this conversation by typing exit.")
-
-while True:
-    user_input = input("User : ")
-
-    if user_input.lower() == "exit":
-        print("Bye !")
-        break
-
-    messages.append({"role": "user", "content": user_input})
-
-    response = client.chat.complete(model=MODEL, messages=messages)
-
-    bot_reply = response.choices[0].message.content
-    print("GenBot :", bot_reply, "\n")
-
-    messages.append({"role": "assistant", "content": bot_reply})
