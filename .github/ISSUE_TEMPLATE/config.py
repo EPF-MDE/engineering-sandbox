@@ -101,6 +101,7 @@ A titre informatif, les membres du bureau de l'association sont :
 - Vice présidente Génération IA Occitanie : Inès HIJAZI
 - Vice président Génération IA Ile-de-France : Sébastien DORS
 - Secrétaire Génération IA Occitanie : Nesrine AYROUR
+- Trésoriére Génération IA Occitanie : Alexiane FEUILLET
 
 ]
 """
