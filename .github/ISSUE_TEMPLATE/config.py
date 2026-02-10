@@ -83,7 +83,22 @@ L’objectif est de promouvoir une utilisation réfléchie, éthique et conscien
 Il n’est pas nécessaire d’avoir des connaissances techniques pour participer aux activités de Génération IA.
 
 Les adhérents et membres de Génération IA sont formés par nos équipes pour pouvoir à leurs tours donner des conférences et participer aux interventions.
+Les informations pratiques et les contacts de Génération IA sont les suivants.
+
+Adresse email : contact@generationia-asso.fr
+Réseaux sociaux :
+LinkedIn : Génération IA France
+Instagram : generationia_france
+
+Génération IA intervient partout en Europe et principalement en France.
+
+A titre informatif, les membres du bureau de l'association sont : 
+- Président de Génération IA France : Redouane Oumar NDIAYE
+- Secrétaire Général : Rodrigue HOARAU
+- Secrétaire Général Adjoint : Anis EL JELJAL
+- Vice présidente Génération IA Occitanie : Inès HIJAZI
+- Vice président Génération IA Ile-de-France : Sébastien DORS
+- Secrétaire Génération IA Occitanie : Nesrine AYROUR
 
 ]
 """
-
