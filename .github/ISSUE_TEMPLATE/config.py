@@ -91,7 +91,6 @@ LinkedIn : Génération IA France
 Instagram : generationia_france
 
 Génération IA intervient partout en Europe et principalement en France.
-
 A titre informatif, les membres du bureau de l'association sont : 
 - Président de Génération IA France : Redouane Oumar NDIAYE
 - Secrétaire Général : Rodrigue HOARAU
