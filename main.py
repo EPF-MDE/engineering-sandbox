@@ -3,10 +3,11 @@
 
 import google.generativeai as genai
 import openfoodfacts
+import os
 
-api = openfoodfacts.API(user_agent="MySchoolProject/1.0 (demerdjievm99@mail.com)")
+api = openfoodfacts.API(user_agent=os.environ.get("API_OPENFOODFACTS_USER_AGENT"))
 
-genai.configure(api_key="AIzaSyCTsQ3FUsPANS-tRS1GKU26pqIVEFe5SLU")
+genai.configure(api_key=os.environ.get("API_GEMINI_KEY"))
 model = genai.GenerativeModel("gemini-2.5-flash-lite")
 
 
