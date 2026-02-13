@@ -3,10 +3,10 @@ from datetime import datetime
 from datetime import date
 import json
 
-# chemin vers la racine du projet
+# Path to the base directory of the project
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# chemin vers le fichier json
+# Path to the data file
 DATA_FILE = BASE_DIR / "data" / "data.json"
 
 

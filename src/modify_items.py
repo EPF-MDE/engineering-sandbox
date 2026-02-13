@@ -41,6 +41,7 @@ def RegisterNewProduct():
         json.dump(products, file)
 
 
+# Function to delete an existing product
 def DeleteExistingProduct():
     with open(DATA_FILE, "r", encoding="utf-8") as f:
         products = json.load(f)
