@@ -1,21 +1,23 @@
 def user_info():
-    
-    print("To create a specific programme for you, please fill in the following information:")
 
-   
-    name = str(input(" Name: "))
-        
+    print(
+        "To create a specific programme for you, please fill in the following information:"
+    )
 
+    # Get basic user infos without condition
+
+    name = input(" Name: ")
     surname = input(" Surname: ")
-        
+
+    # Run complex logic on user inputs
 
     while True:
         try:
             age = int(input("Age: "))
             if 6 <= age <= 100:
                 break
-            print("Age must be between 10 and 100.")
-        except:
+            print("Age must be between 6 and 100.")
+        except ValueError:
             print(" Please enter a number.")
 
     while True:
@@ -24,24 +26,22 @@ def user_info():
             break
         print(" Please enter 'male' or 'female'.")
 
-    
     while True:
         try:
             weight = float(input("Weight (kg): "))
             if weight > 20:
                 break
             print(" Weight must be positive.")
-        except:
+        except ValueError:
             print(" Please enter a number.")
 
-    
     while True:
         try:
             height = float(input("Height (cm): "))
             if height > 110:
                 break
             print(" Height must be realistic.")
-        except:
+        except ValueError:
             print(" Please enter a number.")
 
     print("\n Profile created successfully!\n")
