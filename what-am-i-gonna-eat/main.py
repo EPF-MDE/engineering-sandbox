@@ -2,13 +2,11 @@ import pandas as pd
 
 recette_table = pd.read_csv("what-am-i-gonna-eat//recettes.csv", sep=";")
 
-choice = int(
-    input(
-        "Hello, do you need ingredients for a recipe [1] or a recipe for your ingredients [2] ?  \n>>  "
-    )
+choice = input(
+    "Hello, do you need ingredients for a recipe [1] or a recipe for your ingredients [2] ?  \n>>  "
 )
 
-if choice == 1:
+if int(choice) == 1:
     user_recette = input("What dish would you like to cook today ?  \n>>  ")
 
     for idx, recette in recette_table.iterrows():
@@ -22,6 +20,9 @@ if choice == 1:
     if not condition:
         print("That recipe does not exist")
 
-if choice == 2:
+elif int(choice) == 2:
     # use .countains('ingredient')
     print("Not implemented yet, sorry")
+
+else:
+    print("Choice not recognized as [1/2] - end script")
