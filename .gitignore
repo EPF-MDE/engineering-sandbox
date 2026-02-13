@@ -1,0 +1,5 @@
+# Global to all projects
+__pycache__
+
+# Specific to Task Manager
+task_manager/tasks.json
