@@ -16,31 +16,21 @@ class vote:
     def increment_vote_by_index(self, i):
         self.vote_list[i] += 1
 
+    def get_winner(self):
+        win = []
+        for i in range(len(self.vote_list)):
+            if self.vote_list[i] == max(self.vote_list):
+                win.append(list_dishes[i])
+        return win
 
-# Search the winner in res_vote, return the alist of dish(es) with the higher score
-def search_winner():
-    global res_votes
-    win = []
-    for i in range(len(res_votes)):
-        if res_votes[i] == max(res_votes):
-            win.append(list_dishes[i])
-    return win
-
-
-# Increment the number of vote for a dish depending of n the index
-def add_vote(i):
-    global res_votes
-    res_votes[i] += 1
-    print(res_votes)
-    print(search_winner())
+    def is_reset(self):
+        if self.vote_list == [0, 0, 0, 0, 0, 0]:
+            return True
+        else:
+            return False
 
 
-# reset the votes
-def reset():
-    global res_votes
-    res_votes = [0, 0, 0, 0, 0, 0]
-
-    print(res_votes)
+res_vote = vote()
 
 
 class tkinterApp(tk.Tk):
@@ -51,8 +41,8 @@ class tkinterApp(tk.Tk):
         tk.Tk.__init__(self, *args, **kwargs)
         self.geometry("650x500")
         self.title("Vote for your favorite dish")
-        # Background
 
+        # Background
         img = Image.open("background.jpg")
         self.bg_img = ImageTk.PhotoImage(img)
 
@@ -91,7 +81,7 @@ class tkinterApp(tk.Tk):
         if cont is ResultPage:
             for i in range(6):
                 frame.labels_list[i].config(
-                    text=f"{list_dishes[i]}: {res_votes[i]} votes"
+                    text=f"{list_dishes[i]}: {res_vote.vote_list[i]} votes"
                 )
         # refresh when winnerPage is load to get the winner(s)
         if cont == WinnerPage:
@@ -140,7 +130,7 @@ class StartPage(tk.Frame):
 
         button_winner.place(relx=0.5, y=300, anchor="center")
 
-        button_reset = ttk.Button(self, text="Reset", command=reset)
+        button_reset = ttk.Button(self, text="Reset", command=res_vote.reset_list)
 
         button_reset.place(relx=0.5, y=400, anchor="center")
 
@@ -167,7 +157,7 @@ class VotePage(tk.Frame):
             buttons_list[i] = ttk.Button(
                 self,
                 text=list_dishes[i],
-                command=lambda i=i: add_vote(i),
+                command=lambda i=i: res_vote.increment_vote_by_index(i),
             )
             buttons_list[i].place(
                 relx=cols_relx[col], rely=rows_rely[row], anchor="center"
@@ -202,7 +192,7 @@ class ResultPage(tk.Frame):
             col = i % 3
             self.labels_list[i] = tk.Label(
                 self,
-                text=f"{list_dishes[i]}: {res_votes[i]} votes",
+                text=f"{list_dishes[i]}: {res_vote.vote_list[i]} votes",
                 font=("Arial", 12),
                 fg="white",
                 bg="#111827",
@@ -229,21 +219,20 @@ class WinnerPage(tk.Frame):
         self.label_list = []
 
     def create_labels(self):
-        global res_votes
         # Remove actual label
         for label in self.label_list:
             label.destroy()
         self.label_list = []
-        if res_votes == [0, 0, 0, 0, 0, 0]:
+        if res_vote.is_reset():
             return
-        n = len(search_winner())
+        n = len(res_vote.get_winner())
         if n == 0:
             return
 
         font_size = 20
         i = 0
         # Show the list of winners
-        for winner in search_winner():
+        for winner in res_vote.get_winner():
             label = tk.Label(
                 self,
                 text=winner,
