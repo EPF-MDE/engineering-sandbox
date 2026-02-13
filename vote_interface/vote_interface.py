@@ -33,6 +33,15 @@ class vote:
 res_vote = vote()
 
 
+# Use to add the background on a frame
+def add_background(object):
+    img = Image.open("background.jpg")
+    object.bg_img = ImageTk.PhotoImage(img)
+
+    bg_label = tk.Label(object, image=object.bg_img)
+    bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+
+
 class tkinterApp(tk.Tk):
     # __init__ function for class tkinterApp
     def __init__(self, *args, **kwargs):
@@ -43,11 +52,7 @@ class tkinterApp(tk.Tk):
         self.title("Vote for your favorite dish")
 
         # Background
-        img = Image.open("background.jpg")
-        self.bg_img = ImageTk.PhotoImage(img)
-
-        bg_label = tk.Label(self, image=self.bg_img)
-        bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+        add_background(self)
 
         # creating a container
         container = tk.Frame(self)
@@ -91,12 +96,10 @@ class tkinterApp(tk.Tk):
 
 class StartPage(tk.Frame):
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-        img = Image.open("background.jpg")
-        self.bg_img = ImageTk.PhotoImage(img)
 
-        bg_label = tk.Label(self, image=self.bg_img)
-        bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+        tk.Frame.__init__(self, parent)
+        add_background(self)
+
         # label of frame Layout 2
         title_label = tk.Label(
             self,
@@ -140,11 +143,7 @@ class VotePage(tk.Frame):
     def __init__(self, parent, controller):
 
         tk.Frame.__init__(self, parent)
-        img = Image.open("background.jpg")
-        self.bg_img = ImageTk.PhotoImage(img)
-
-        bg_label = tk.Label(self, image=self.bg_img)
-        bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+        add_background(self)
 
         buttons_list = [None] * 6
         cols_relx = [0.166, 0.5, 0.833]
@@ -171,12 +170,10 @@ class VotePage(tk.Frame):
 
 class ResultPage(tk.Frame):
     def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-        img = Image.open("background.jpg")
-        self.bg_img = ImageTk.PhotoImage(img)
 
-        bg_label = tk.Label(self, image=self.bg_img)
-        bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+        tk.Frame.__init__(self, parent)
+        add_background(self)
+
         button_StartPage = ttk.Button(
             self, text="Menu", command=lambda: controller.show_frame(StartPage)
         )
@@ -206,11 +203,7 @@ class WinnerPage(tk.Frame):
     def __init__(self, parent, controller):
 
         tk.Frame.__init__(self, parent)
-        img = Image.open("background.jpg")
-        self.bg_img = ImageTk.PhotoImage(img)
-
-        bg_label = tk.Label(self, image=self.bg_img)
-        bg_label.place(x=0, y=0, relwidth=1, relheight=1)
+        add_background(self)
 
         button_StartPage = ttk.Button(
             self, text="Menu", command=lambda: controller.show_frame(StartPage)
