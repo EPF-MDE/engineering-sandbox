@@ -103,7 +103,6 @@ A titre informatif, les membres du bureau de l'association sont :
 - Secrétaire Génération IA Occitanie : Nesrine AYROUR
 - Trésoriére Génération IA Occitanie : Alexiane FEUILLET
 
-]
 """
 messages = [  # conversation's list for memory
     {"role": "system", "content": system_prompt},
