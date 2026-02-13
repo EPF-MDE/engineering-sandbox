@@ -157,9 +157,14 @@ def user_message(n_clicks, n_submit, user_input, chat_history):
     # message utilisateur instantané
     chat_history.append(html.Div(user_input, style=USER_BUBBLE, className="mb-2"))
 
-    # message "typing"
+    # message "GenBot écrit..."
     chat_history.append(
-        html.Div("GenBot écrit...", style=BOT_BUBBLE, className="mb-3", id="typing")
+        html.Div(
+            "GenBot écrit...",
+            style={**BOT_BUBBLE, "fontStyle": "italic", "color": "#888"},
+            className="mb-3",
+            key="typing",
+        )
     )
 
     messages.append({"role": "user", "content": user_input})
@@ -183,7 +188,7 @@ def bot_response(trigger, chat_history):
     messages.append({"role": "assistant", "content": bot_reply})
 
     # retirer "GenBot écrit..."
-    chat_history = [c for c in chat_history if getattr(c, "id", None) != "typing"]
+    chat_history = [c for c in chat_history if getattr(c, "key", None) != "typing"]
 
     chat_history.append(
         html.Div(
@@ -194,12 +199,6 @@ def bot_response(trigger, chat_history):
     )
 
     return chat_history
-
-    if not user_input:
-        return chat_history, ""
-
-    if chat_history is None:
-        chat_history = []
 
     # Message utilisateur
     chat_history.append(html.Div(user_input, style=USER_BUBBLE, className="mb-2"))
