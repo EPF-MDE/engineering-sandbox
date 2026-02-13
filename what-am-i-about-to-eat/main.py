@@ -1,6 +1,6 @@
 import pandas as pd
 
-recette_table = pd.read_csv("Recipe//recettes.csv", sep=";")
+recette_table = pd.read_csv("what-am-i-about-to-eat//recettes.csv", sep=";")
 
 choice = int(
     input(
