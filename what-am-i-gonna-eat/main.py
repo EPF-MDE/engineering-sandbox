@@ -10,7 +10,6 @@ choice = int(
 
 if choice == 1:
     user_recette = input("What dish would you like to cook today ?  \n>>  ")
-    recette_index = 0
 
     for idx, recette in recette_table.iterrows():
         if user_recette == recette["nom_recette"]:
