@@ -1,0 +1,11 @@
+nom_recette;ingredients;etapes
+Spaghetti Aglio e Olio;['spaghetti','ail','huile d’olive','persil','piment'];Cuire 200g de spaghetti. Faire revenir 2 gousses d’ail dans 3 càs d’huile d’olive. Ajouter 1 pincée de piment. Mélanger avec les pâtes et ajouter 1 càs de persil.
+Omelette Fromage;['oeufs','fromage','beurre','sel','poivre'];Battre 3 oeufs avec sel et poivre. Faire fondre 10g de beurre. Ajouter les oeufs, puis 50g de fromage râpé. Cuire 5 min.
+Guacamole;['avocat','citron','oignon','sel','tomate'];Écraser 2 avocats. Ajouter le jus d’1/2 citron, 30g d’oignon, 1 tomate coupée, 1 pincée de sel.
+Pancakes;['farine','oeuf','lait','sucre','levure'];Mélanger 150g de farine, 1 oeuf, 200ml de lait, 20g de sucre, 1 sachet de levure. Cuire à la poêle.
+Riz cantonais;['riz','oeufs','petits pois','jambon','sauce soja'];Cuire 200g de riz. Brouiller 2 oeufs. Ajouter 100g de petits pois, 100g de jambon, 2 càs de sauce soja.
+Salade Caprese;['tomates','mozzarella','basilic','huile d’olive','sel'];Couper 2 tomates et 150g de mozzarella. Ajouter basilic, 2 càs d’huile d’olive, 1 pincée de sel.
+Tiramisu Express;['mascarpone','sucre','café','biscuits','cacao'];Mélanger 200g de mascarpone avec 50g de sucre. Tremper 6 biscuits dans 100ml de café. Monter en couches. Saupoudrer de cacao.
+Smoothie Banane;['banane','lait','miel','yaourt','glace'];Mixer 2 bananes, 200ml de lait, 1 càs de miel, 1 yaourt, 5 glaçons.
+Quesadilla;['tortilla','fromage','poulet','poivron','huile'];Garnir 2 tortillas avec 100g de poulet, 80g de fromage, 50g de poivron. Cuire avec 1 càs d’huile.
+Mug Cake Chocolat;['farine','sucre','cacao','lait','huile'];Mélanger 4 càs de farine, 3 càs de sucre, 2 càs de cacao, 3 càs de lait, 2 càs d’huile. Micro-ondes 1 min.
